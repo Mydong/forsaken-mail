@@ -7,9 +7,23 @@ Forsaken-Mail
 
 ### 步骤 
 
-### 域名解析 
+### 如何自己部署
 
-为了接收电子邮件，您的smtp服务器地址应该在某处可用。两个记录应该添加到您的DNS记录中。假设我们想在``*@subdomain.domain.com```:*接收电子邮件，首先是MX记录：```subdomain.domain.com MX 10 mxsubdomain.domain.com```。这意味着像``*@subdomain.domain.com``这样的地址的邮件服务器将是``mxsubdomain.domain.com```.*然后是A记录：``mxsubdomain.domain.com是.your.mailin.server```的.ip.address。这会告诉您可以在哪个ip地址找到邮件服务器。
+进行之前，请先确保云服务厂商允许25端口入站以及安全组/防火墙设置运行了25端口。
+目前已知情况，阿里云的服务器默认25端口可以入站，所以你只需要将安全组设置运行25端口TCP即可。
+
+随后，编辑要绑定域名的DNS解析记录，假设域名为 example.com
+新建解析 (A)，主机记录 @，记录值填写为云服务器的IP。新建解析 (MX)，主机记录 @，记录值 example.com，MX优先级默认
+
+例如如下配置，123.123.123.123 代表你的服务器IP，mail.example.com 是访问此邮箱页面的主机名，example.com 是邮箱的后缀例如 abcdef@example.com。
+
+| 主机记录 | 记录类型  | 记录值             | TTL  |
+| ---- | ----- | --------------- | ---- |
+| mail | CNAME | example.com     | 10分钟 |
+| @    | MX    | example.com     | 10分钟 |
+| @    | A     | 123.123.123.123 | 10分钟 |
+
+这样，你已经完成了域名相关的配置，随后进入云服务器进行以下操作。
 
 您可以启动Mailin（请参阅下一节）并使用[smtp服务器测试]（http://mxtoolbox.com/diagnostic.aspx）验证所有内容是否正确。
 
