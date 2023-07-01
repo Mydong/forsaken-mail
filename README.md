@@ -25,7 +25,7 @@ Forsaken-Mail
 
 这样，你已经完成了域名相关的配置，随后进入云服务器进行以下操作。
 
-您可以启动Mailin（请参阅下一节）并使用[smtp服务器测试]（http://mxtoolbox.com/diagnostic.aspx）验证所有内容是否正确。
+您可以启动Mailin（请参阅下一节）并使用[smtp服务器测试]（http://mxtoolbox.com/diagnostic.aspx) 验证所有内容是否正确。
 
 
 ### 开始 
