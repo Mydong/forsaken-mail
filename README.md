@@ -18,10 +18,11 @@ Forsaken-Mail
 |:---:|:---:|:---:|:---:|
 |subdomain.domain.com|MX|10|mxsubdomain.domain.com|
 
-这意味着像`@subdomain.domain.com`这样的地址的邮件服务器将是``mxsubdomain.domain.com``.
-然后是A记录：`mxsubdomain.domain.com` 是.your.mailin.server的ip address。这会告诉您可以在哪个ip地址找到邮件服务器。
+这意味着像`@subdomain.domain.com` 这样的地址的邮件服务器将是`mxsubdomain.domain.com`.
 
-您可以启动Mailin（请参阅下一节）并使用[smtp服务器测试]（http://mxtoolbox.com/diagnostic.aspx）   验证所有内容是否正确。
+然后是：A记录：`mxsubdomain.domain.com`是你邮箱服务的的ip address。这会告诉您可以在哪个ip地址找到邮件服务器。
+
+您可以启动 mail（请参阅下一节）并使用[smtp服务器测试]（http://mxtoolbox.com/diagnostic.aspx）   验证所有内容是否正确。
 
 
 ### 开始 
