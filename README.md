@@ -14,7 +14,7 @@ Forsaken-Mail
 假设我们想在``@subdomain.domain.com``:接收电子邮件
 首先是MX记录：``subdomain.domain.com MX 10 mxsubdomain.domain.com``。
 即
-|主机记录|记录类型|权重|记录值|
+|主机记录|记录类型|优先级|记录值|
 |:---:|:---:|:---:|:---:|
 |subdomain.domain.com|MX|10|mxsubdomain.domain.com|
 
