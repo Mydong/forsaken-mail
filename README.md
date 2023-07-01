@@ -24,6 +24,29 @@ Forsaken-Mail
 
 您可以启动 mail（请参阅下一节）并使用[smtp服务器测试]（http://mxtoolbox.com/diagnostic.aspx）   验证所有内容是否正确。
 
+#### 如果上面不好理解，可以按照下面的设置
+
+要绑定域名（如example.com）的DNS解析记录；
+
+新建解析 (A)，主机记录 @，记录值填写为云服务器的IP。
+
+新建解析 (MX)，主机记录 @，记录值 example.com，MX优先级默认
+
+例如，如下配置：
+
+123.123.123.123 代表你的服务器IP，
+
+mail.example.com 是访问此邮箱页面的主机名，
+
+example.com 是邮箱的后缀，例如 username@example.com。
+
+| 主机记录 | 记录类型  | 记录值             | TTL  |
+| ---- | ----- | --------------- | ---- |
+| mail | CNAME | example.com     | 10分钟 |
+| @    | MX    | example.com     | 10分钟 |
+| @    | A     | 123.123.123.123 | 10分钟 |
+
+
 
 ### 开始 
 
